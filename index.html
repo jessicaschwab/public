@@ -21,16 +21,17 @@
       vr-mode-ui="enabled: false"
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-marker preset="hiro">
-        <a-entity
-          gltf-model="model_noanim-v1.glb"
-          scale="1 1 1"
-          rotation="0 0 0"
-          position="0 0 0"
-        ></a-entity>
-      </a-marker>
+     <!-- handle hiro marker -->
+        <a-marker preset="hiro">
+            <a-circle color="blue" radius="1" rotation="-90 0 0">
+                <a-box position="1 1 0" depth="0.3" height="0.3" width="0.3" rotation="0 0 0" material="color: orange;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000; easing: linear"></a-box>
+                <a-text position="0 0 0.2" value="Hiro" color="orange" align="center" width="30">
+                </a-text>
+                <a-box position="-1 -1 0" depth="0.3" height="0.3" width="0.3" rotation="0 0 0" material="color: orange;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000; easing: linear"></a-box>
+            </a-circle>
+        </a-marker>
 
-      <a-entity camera></a-entity>
+      <a-entity camera> gltf-model="model_noanim-v1.glb"</a-entity>
     </a-scene>
   </body>
 </html>
